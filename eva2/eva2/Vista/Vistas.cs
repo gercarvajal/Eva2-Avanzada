@@ -1,18 +1,15 @@
-﻿using System;
+﻿using eva2.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace eva2
+namespace eva2.Vista
 {
-    internal class Vistas
+    public class Vistas
     {
-        public Vistas()
-        {
-        }
-
-        public static void menuPrincipal()
+        public int menuPrincipal()
         {
 
             Console.Clear();
@@ -47,45 +44,23 @@ namespace eva2
             Console.SetCursorPosition(30, 22);
             Console.WriteLine("  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
 
-            Console.SetCursorPosition(79, 15);
+
             int opc;
             do
             {
-                Console.SetCursorPosition(81, 15);
+                Console.SetCursorPosition(93, 15);
                 String op = Console.ReadLine();
                 int.TryParse(op, out opc);
             } while (opc < 0 || opc > 4);
 
             Console.Clear();
 
-            switch (opc)
-            {
-                case 1:
-
-                   // pedirdatos();
+            return opc;
 
 
-                    break;
-                case 2:
-
-                  //  modificar();
-
-                    break;
-
-                case 3:
-                   // eliminar();
-                    break;
-
-                case 4:
-                    Environment.Exit(0);
-                    break;
-                default:
-                    menuPrincipal();
-                    break;
-            }
         }
 
-        public static void menuUsuaios()
+        public int menuUsuarios()
         {
 
             Console.Clear();
@@ -128,52 +103,23 @@ namespace eva2
             Console.SetCursorPosition(30, 26);
             Console.WriteLine("  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
 
-            Console.SetCursorPosition(79, 15);
+
             int opc;
             do
             {
-                Console.SetCursorPosition(81, 15);
+                Console.SetCursorPosition(94, 15);
                 String op = Console.ReadLine();
                 int.TryParse(op, out opc);
             } while (opc < 0 || opc > 6);
 
+            return opc;
+
             Console.Clear();
 
-            switch (opc)
-            {
-                case 1:
-
-                    // pedirdatos();
-
-
-                    break;
-                case 2:
-
-                    //  modificar();
-
-                    break;
-
-                case 3:
-                    // eliminar();
-                    break;
-                case 4:
-                    // eliminar();
-                    break;
-                case 5:
-                    menuPrincipal();
-                    break;
-
-                case 6:
-                    Environment.Exit(0);
-                    break;
-                default:
-                    menuUsuaios();  
-                    break;
-            }
 
         }
 
-        public static void menuFamilia()
+        public int menuFamilia()
         {
 
             Console.Clear();
@@ -216,52 +162,24 @@ namespace eva2
             Console.SetCursorPosition(30, 26);
             Console.WriteLine("  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
 
-            Console.SetCursorPosition(79, 15);
+           
             int opc;
             do
             {
-                Console.SetCursorPosition(81, 15);
+                Console.SetCursorPosition(93, 15);
                 String op = Console.ReadLine();
                 int.TryParse(op, out opc);
             } while (opc < 0 || opc > 6);
 
+            return opc;
+
             Console.Clear();
 
-            switch (opc)
-            {
-                case 1:
-
-                    // pedirdatos();
-
-
-                    break;
-                case 2:
-
-                    //  modificar();
-
-                    break;
-
-                case 3:
-                    // eliminar();
-                    break;
-                case 4:
-                    // eliminar();
-                    break;
-                case 5:
-                    menuPrincipal();
-                    break;
-
-                case 6:
-                    Environment.Exit(0);
-                    break;
-                default:
-                    menuFamilia();
-                    break;
-            }
+           
         }
 
 
-        public static void menuProductos()
+        public void menuProductos()
         {
 
             Console.Clear();
@@ -336,7 +254,7 @@ namespace eva2
                     // eliminar();
                     break;
                 case 5:
-                    menuPrincipal();
+                    //  menuPrincipal();
                     break;
 
                 case 6:
@@ -347,6 +265,64 @@ namespace eva2
                     break;
             }
         }
+
+
+
+       
+
+
+
+
+        public int fin()
+        {
+
+
+            Console.Clear();
+
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.SetCursorPosition(40, 9);
+            Console.WriteLine("┌───────────────────────────────────────────────┐");
+            Console.SetCursorPosition(40, 10);
+            Console.WriteLine("|                 SELECCIONE                    |▓▓");
+            Console.SetCursorPosition(40, 11);
+            Console.WriteLine("|                                               |▓▓░░");
+            Console.SetCursorPosition(40, 12);
+            Console.WriteLine("|    Ingrese 1 para volver al menu principal    |▓▓░░");
+            Console.SetCursorPosition(40, 13);
+            Console.WriteLine("|    Ingrese 2 para Salir                       |▓▓░░");
+            Console.SetCursorPosition(40, 14);
+            Console.WriteLine("|                                               |▓▓░░");
+            Console.SetCursorPosition(40, 15);
+            Console.WriteLine("|                 ┌────────┐                    |▓▓░░");
+            Console.SetCursorPosition(40, 16);
+            Console.WriteLine("|                 |        |                    |▓▓░░");
+            Console.SetCursorPosition(40, 17);
+            Console.WriteLine("|                 └────────┘                    |▓▓░░");
+            Console.SetCursorPosition(40, 18);
+            Console.WriteLine("|                                               |▓▓░░");
+            Console.SetCursorPosition(40, 19);
+            Console.WriteLine("└───────────────────────────────────────────────┘▓▓░░");
+            Console.SetCursorPosition(40, 20);
+            Console.WriteLine(" ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░");
+            Console.SetCursorPosition(40, 21);
+            Console.WriteLine("   ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
+            Console.SetCursorPosition(62, 16);
+
+            // int opc = Convert.ToInt32(Console.ReadLine());
+
+            int opc;
+            do
+            {
+                String op = Console.ReadLine();
+                int.TryParse(op, out opc);
+                Console.SetCursorPosition(60, 16);
+            } while (opc < 0 || opc > 2);
+
+            return opc;
+
+
+        }
+
 
 
 
