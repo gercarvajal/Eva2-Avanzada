@@ -65,11 +65,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\C#Programs\\eva2\\eva2\\eva2.csproj",
+      "projectUniqueName": "C:\\Users\\gerca\\Desktop\\eva2\\eva2\\eva2.csproj",
       "projectName": "eva2",
-      "projectPath": "D:\\C#Programs\\eva2\\eva2\\eva2.csproj",
+      "projectPath": "C:\\Users\\gerca\\Desktop\\eva2\\eva2\\eva2.csproj",
       "packagesPath": "C:\\Users\\gerca\\.nuget\\packages\\",
-      "outputPath": "D:\\C#Programs\\eva2\\eva2\\obj\\",
+      "outputPath": "C:\\Users\\gerca\\Desktop\\eva2\\eva2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -122,7 +122,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   },

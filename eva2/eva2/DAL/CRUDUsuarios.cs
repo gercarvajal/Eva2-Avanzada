@@ -8,10 +8,14 @@ using static eva2.DTO.Usuario;
 
 namespace eva2.DAL
 {
+    
     internal class CRUDUsuarios
     {
 
         private static List<Usuario> usuarios = new List<Usuario>();
+
+        //ruta del archivo usuarios.txt()
+        public  String ruta = @"C:\Users\gerca\Desktop\eva2\eva2\Usuarios.txt";
 
         public void Insertar(Usuario usu)
         {
@@ -19,7 +23,7 @@ namespace eva2.DAL
             usuarios.Add(usu);
             String li = usu.Usuari + ";" + usu.Clave;
         
-            StreamWriter Temp = new StreamWriter(@"D:\C#Programs\eva2\eva2\Usuarios.txt", true);
+            StreamWriter Temp = new StreamWriter(ruta, true);
             Temp.WriteLine(li);
             Temp.Close();
          
@@ -35,7 +39,7 @@ namespace eva2.DAL
 
             //borrar en archivo
 
-            string FileToRead = @"D:\C#Programs\eva2\eva2\Usuarios.txt";
+            string FileToRead = ruta;
             string[] lines = File.ReadAllLines(FileToRead);
 
             int k = 0;
@@ -51,13 +55,13 @@ namespace eva2.DAL
                 k = k + 1;
             }
 
-            File.WriteAllLines(@"D:\C#Programs\eva2\eva2\Usuarios.txt", lines);
+            File.WriteAllLines(ruta, lines);
 
             //Insertar nuevo en archivo
 
             String li = usu.Usuari + ";" + usu.Clave;
 
-            StreamWriter Temp = new StreamWriter(@"D:\C#Programs\eva2\eva2\Usuarios.txt", true);
+            StreamWriter Temp = new StreamWriter(ruta, true);
             Temp.WriteLine(li);
             Temp.Close();
 
@@ -73,7 +77,7 @@ namespace eva2.DAL
 
             //borra archivo
 
-            string FileToRead = @"D:\C#Programs\eva2\eva2\Usuarios.txt";
+            string FileToRead = ruta;
             string[] lines = File.ReadAllLines(FileToRead);
 
             int k = 0;
@@ -89,14 +93,14 @@ namespace eva2.DAL
                 k = k + 1;
             }
 
-            File.WriteAllLines(@"D:\C#Programs\eva2\eva2\Usuarios.txt", lines);
+            File.WriteAllLines(ruta, lines);
            
 
         }
 
         public void borrartodoarchivo() {
 
-            FileStream fileStream = File.Open(@"D:\C#Programs\eva2\eva2\Usuarios.txt", FileMode.Open);
+            FileStream fileStream = File.Open(ruta, FileMode.Open);
 
             fileStream.SetLength(0);
 

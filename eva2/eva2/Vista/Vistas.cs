@@ -9,12 +9,72 @@ namespace eva2.Vista
 {
     public class Vistas
     {
+
+        public String[] login()
+        {
+            String[] datos=new String[2];
+            Console.Clear();
+           
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.SetCursorPosition(40, 8);
+            Console.WriteLine("┌─────────────────────────────────────────┐");
+            Console.SetCursorPosition(40, 9);
+            Console.WriteLine("|                                         |▓▓░░");
+            Console.SetCursorPosition(40, 10);
+            Console.WriteLine("|             INICIO DE SESION            |▓▓░░");
+            Console.SetCursorPosition(40, 11);
+            Console.WriteLine("|                                         |▓▓░░");
+            Console.SetCursorPosition(40, 12);
+            Console.WriteLine("|                                         |▓▓░░");
+            Console.SetCursorPosition(40, 13);
+            Console.WriteLine("|   Ususario:  [                    ]     |▓▓░░");
+            Console.SetCursorPosition(40, 14);
+            Console.WriteLine("|                                         |▓▓░░");
+            Console.SetCursorPosition(40, 15);
+            Console.WriteLine("|      Clave:  [                    ]     |▓▓░░");
+            Console.SetCursorPosition(40, 16);
+            Console.WriteLine("|                                         |▓▓░░");
+            Console.SetCursorPosition(40, 17);
+            Console.WriteLine("|                                         |▓▓░░");
+            Console.SetCursorPosition(40, 18);
+            Console.WriteLine("└─────────────────────────────────────────┘▓▓░░");
+            Console.SetCursorPosition(40, 19);
+            Console.WriteLine(" ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░");
+            Console.SetCursorPosition(40, 20);
+            Console.WriteLine("  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
+            Console.SetCursorPosition(57, 13);
+            String usu = Console.ReadLine();
+
+            ConsoleKeyInfo key;
+            Console.SetCursorPosition(57, 15);
+            String pass = " ";
+            do
+            {
+
+                key = Console.ReadKey(true);
+                if (key.Key != ConsoleKey.Backspace)
+                {
+
+                    pass += key.KeyChar;
+                    if (key.Key != ConsoleKey.Enter)Console.Write("*");
+                }
+            } while (key.Key != ConsoleKey.Enter);
+
+            datos[0] =usu;
+            datos[1] =pass; 
+
+            return datos;
+
+           // archivo2(usu, pass);
+
+        }
         public int menuPrincipal()
         {
 
             Console.Clear();
 
-            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.SetCursorPosition(30, 9);
             Console.WriteLine("┌────────────────────────────────────────────────────────────────────────┐");
             Console.SetCursorPosition(30, 10);
@@ -65,7 +125,7 @@ namespace eva2.Vista
 
             Console.Clear();
 
-            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.SetCursorPosition(30, 9);
             Console.WriteLine("┌────────────────────────────────────────────────────────────────────────┐");
             Console.SetCursorPosition(30, 10);
@@ -124,7 +184,7 @@ namespace eva2.Vista
 
             Console.Clear();
 
-            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.SetCursorPosition(30, 9);
             Console.WriteLine("┌────────────────────────────────────────────────────────────────────────┐");
             Console.SetCursorPosition(30, 10);
@@ -179,12 +239,12 @@ namespace eva2.Vista
         }
 
 
-        public void menuProductos()
+        public int menuProductos()
         {
 
             Console.Clear();
 
-            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.SetCursorPosition(30, 9);
             Console.WriteLine("┌────────────────────────────────────────────────────────────────────────┐");
             Console.SetCursorPosition(30, 10);
@@ -222,49 +282,24 @@ namespace eva2.Vista
             Console.SetCursorPosition(30, 26);
             Console.WriteLine("  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
 
-            Console.SetCursorPosition(79, 15);
+        
             int opc;
             do
             {
-                Console.SetCursorPosition(81, 15);
+                Console.SetCursorPosition(93, 15);
                 String op = Console.ReadLine();
                 int.TryParse(op, out opc);
             } while (opc < 0 || opc > 6);
 
             Console.Clear();
+            return opc;
 
-            switch (opc)
-            {
-                case 1:
-
-                    // pedirdatos();
-
-
-                    break;
-                case 2:
-
-                    //  modificar();
-
-                    break;
-
-                case 3:
-                    // eliminar();
-                    break;
-                case 4:
-                    // eliminar();
-                    break;
-                case 5:
-                    //  menuPrincipal();
-                    break;
-
-                case 6:
-                    Environment.Exit(0);
-                    break;
-                default:
-                    menuProductos();
-                    break;
-            }
+           
         }
+
+
+
+
 
 
 
